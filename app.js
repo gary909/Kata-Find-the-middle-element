@@ -1,5 +1,18 @@
 function gimme (triplet) {
 
+    const numOrder = Array.from(triplet); // create copy of array
+    numOrder.sort(function(a, b){return a-b}); // sort copied array
+    
+    let middleNum = numOrder[1]; // find middle number
+
+    let myCnt = 0;
+
+    for(let i = 0; i < triplet.length;i++){ // compare positions
+        myCnt = myCnt + 1;
+        if(triplet[i] == middleNum){
+            return myCnt - 1;
+        }
+    }
 }
 
 console.log(gimme([2, 3, 1])); //  0
